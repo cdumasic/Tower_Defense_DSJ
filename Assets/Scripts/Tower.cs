@@ -50,4 +50,10 @@ public class Tower : MonoBehaviour
             projectile.SetTarget(target);
         }
     }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red; // Color del círculo
+        Gizmos.DrawWireSphere(transform.position, range); // Dibuja el radio
+    }
 }

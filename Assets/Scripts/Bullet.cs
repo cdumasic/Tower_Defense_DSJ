@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
-            // Aquí podrías restar vida al enemigo
+            
             Destroy(target.gameObject);
             Destroy(gameObject);
         }

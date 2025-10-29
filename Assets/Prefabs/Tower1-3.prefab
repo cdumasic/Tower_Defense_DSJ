@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 3536244577385846036}
   - component: {fileID: 7746358546994330622}
   m_Layer: 0
-  m_Name: Tower1-1
+  m_Name: Tower1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -397,7 +397,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -5901685104126582622, guid: 05026123688f96149908a068e0879610, type: 3}
+  m_Sprite: {fileID: 891193081, guid: 05026123688f96149908a068e0879610, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2cfb8cd314c3b43960b26271be79f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
-  range: 3
+  range: 2
   fireRate: 1
   projectilePrefab: {fileID: 2694084283947953907, guid: f47bc934e3514a34182a16a2006f4112, type: 3}
   cost: 50

@@ -3,6 +3,7 @@
 public class Enemy : MonoBehaviour
 {
     [Header("Atributos del enemigo")]
+    public EnemyHealthBar EnemyHealthBar;
     public int maxHealth = 5;
     private int currentHealth;
 
@@ -16,7 +17,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-
+        EnemyHealthBar.UpdateHealthBar(maxHealth, currentHealth);
         // Se registra en el manager
         if (!EnemyManager.enemies.Contains(this))
             EnemyManager.enemies.Add(this);
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        EnemyHealthBar.UpdateHealthBar(maxHealth, currentHealth);
         Debug.Log($"{gameObject.name} recibió {damage} de daño. Salud restante: {currentHealth}");
 
         if (currentHealth <= 0)

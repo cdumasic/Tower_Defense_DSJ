@@ -7,6 +7,10 @@ public class Tower : MonoBehaviour
     public float fireRate = 1f;
     public GameObject projectilePrefab;
 
+    public int cost1 = 50; //Costo de torre
+    public int cost2 = 100; //Costo de torre
+    public int cost3 = 150; //Costo de torre
+
     private float fireCooldown = 0f;
     private Enemy targetEnemy; // referencia directa al script del enemigo
 

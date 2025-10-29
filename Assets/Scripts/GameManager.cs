@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour
         UpdateUI();
     }
 
+    public int GetGold()
+    { 
+        return gold; 
+    }
+
+
     public void AddGold(int amount)
     {
         gold += amount;
@@ -65,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        Debug.Log("🟥 GAME OVER 🟥");
+        Debug.Log("GAME OVER 🟥");
         // Aquí podrías pausar el juego o mostrar un menú
         Time.timeScale = 0;
     }

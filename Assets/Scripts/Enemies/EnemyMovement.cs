@@ -4,11 +4,13 @@ public class EnemyMovement : MonoBehaviour
 {
     public WaypointPath path;
     public float speed = 2f;
+    public int rotationY = 180;
     private int currentWaypointIndex = 0;
     private Enemy enemy;
 
     void Start()
     {
+        transform.rotation = Quaternion.Euler(0, rotationY, 0);
         enemy = GetComponent<Enemy>();
 
         if (path == null)

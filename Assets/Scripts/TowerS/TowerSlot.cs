@@ -33,7 +33,6 @@ public class TowerSlot : MonoBehaviour
     void OnMouseDown()
     {
         towerSelection = GameManager.Instance.getSeleccionTorre();
-        Debug.Log("Paso punto 1 " + towerSelection + "  xd " + towerData1);
         if (towerSelection == 0)
         {
             if (levelTower2 != 0 || levelTower3 != 0 || levelTower4 != 0) return;
@@ -45,7 +44,6 @@ public class TowerSlot : MonoBehaviour
             // Verificar si hay suficiente oro
             if (GameManager.Instance.GetGold() >= cost1 && levelTower1 == 0)
             {
-                Debug.Log("Paso punto 3");
                 // Resta oro y coloca torre 1
                 GameManager.Instance.SpendGold(cost1);
                 torre = Instantiate(towerPrefab1[0], transform.position, Quaternion.identity);
@@ -205,7 +203,7 @@ public class TowerSlot : MonoBehaviour
         }
         else
         {
-            Debug.Log("Fuentes.");
+            Debug.Log("No existe esa torre.");
         }
     }
 }

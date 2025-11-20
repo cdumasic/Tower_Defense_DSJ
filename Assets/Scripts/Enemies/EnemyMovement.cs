@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
 
             if (currentWaypointIndex >= path.GetWaypointCount())
             {
-                // 🔹 ahora delegamos la lógica de fin de camino al script Enemy
+                // Aqui se llama al enemigo para que se baje vida de la base y desaparezca
                 enemy.ReachEnd();
             }
         }

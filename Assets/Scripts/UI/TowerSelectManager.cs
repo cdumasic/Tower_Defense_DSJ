@@ -19,7 +19,6 @@ public class TowerSelectManager : MonoBehaviour
 
     public void activarSeleccion(int index)
     {
-        Debug.Log("Me presionaste xd");
         if (GameManager.Instance.getTower(index) == true)
         {
 
@@ -35,9 +34,7 @@ public class TowerSelectManager : MonoBehaviour
 
     public void desbloquearTorre(int index)
     {
-        Debug.Log("Me presionaste xd otra vez");
         if (GameManager.Instance.getTower(index) == true) return;
-        Debug.Log("Me presionaste de nuevo que fue manito xd");
         if (GameManager.Instance.getTowerPrices(index) <= GameManager.Instance.GetGold())
         {
             GameManager.Instance.SpendGold(GameManager.Instance.getTowerPrices(index));

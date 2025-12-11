@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   path: {fileID: 0}
-  speed: 5
+  speed: 3
   rotationY: 180
 --- !u!114 &2234040672670208468
 MonoBehaviour:
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   EnemyHealthBar: {fileID: 800299095361546128}
   maxHealth: 5
-  goldReward: 10
+  goldReward: 20
   scoreReward: 20
   lifePenalty: 1
   isboos: 0

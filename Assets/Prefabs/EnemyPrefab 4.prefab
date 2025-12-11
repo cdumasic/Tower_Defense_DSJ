@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7777456079355413635}
   - component: {fileID: 4959756290972597901}
   - component: {fileID: 2234040672670208468}
+  - component: {fileID: 2350615061591371772}
   m_Layer: 0
   m_Name: EnemyPrefab 4
   m_TagString: Enemy
@@ -29,14 +30,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 640005539744749326}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.55, y: 0.51, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1261703488334970082}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2069819997795674772
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -181,8 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   path: {fileID: 0}
-  speed: 5
-  rotationY: 180
+  speed: 3
+  rotationY: 0
 --- !u!114 &2234040672670208468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +198,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   EnemyHealthBar: {fileID: 800299095361546128}
   maxHealth: 5
-  goldReward: 10
+  goldReward: 30
   scoreReward: 20
   lifePenalty: 1
   isboos: 0
+--- !u!95 &2350615061591371772
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640005539744749326}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03eaf53baf78e1c4694257e3ff61c00f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4523708068878074821
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +412,7 @@ MonoBehaviour:
   m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &7964800454148164996

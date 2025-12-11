@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 2069819997795674772}
   - component: {fileID: 4856516809134288234}
   - component: {fileID: 7777456079355413635}
-  - component: {fileID: 4959756290972597901}
+  - component: {fileID: 8070135625481207098}
+  - component: {fileID: 3585309007906674744}
   - component: {fileID: 2234040672670208468}
+  - component: {fileID: 7844778196144584902}
   m_Layer: 0
   m_Name: EnemyPrefab 6
   m_TagString: Enemy
@@ -160,7 +162,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 2.75}
+    oldSize: {x: 8, y: 5.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,7 +170,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4959756290972597901
+--- !u!114 &8070135625481207098
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -177,12 +179,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 640005539744749326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bbfce779a1cbf0439b2721bab8d145e, type: 3}
+  m_Script: {fileID: 11500000, guid: 15369562419e5914ca0a236d0e95467b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  path: {fileID: 0}
-  speed: 5
-  rotationY: 0
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyPathfinding2
+  speed: 2
+  waypoints: {fileID: 0}
+--- !u!114 &3585309007906674744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640005539744749326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0d65ead9013a9342bb560121c988c8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FishFlockManager
+  agents: []
 --- !u!114 &2234040672670208468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +211,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   EnemyHealthBar: {fileID: 800299095361546128}
   maxHealth: 5
-  goldReward: 10
+  goldReward: 30
   scoreReward: 20
   lifePenalty: 1
   isboos: 0
+--- !u!95 &7844778196144584902
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640005539744749326}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 779338a14715b764a8c0d19385c2d944, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4523708068878074821
 GameObject:
   m_ObjectHideFlags: 0

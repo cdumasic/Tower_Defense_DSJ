@@ -162,7 +162,10 @@ public class GameManager : MonoBehaviour
         UpdateUI();
         PlayerPrefs.SetInt("LevelCurrent", LevelCurrent + 1);
         PlayerPrefs.Save();
-        SceneManager.LoadScene(1);
+        if (PlayerPrefs.GetInt("LevelCurrent", 0) >= 5)
+            SceneManager.LoadScene(0);
+        else 
+            SceneManager.LoadScene(1);
     }
 
     void UpdateUI()

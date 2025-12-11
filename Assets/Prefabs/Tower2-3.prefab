@@ -423,8 +423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2cfb8cd314c3b43960b26271be79f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tower
-  range: 7
-  fireRate: 5
+  range: 6
+  fireRate: 4
   projectilePrefab: {fileID: 2694084283947953907, guid: d35fdd45aeef3984c8213e8e2f6c2bfe, type: 3}
   cost1: 50
   cost2: 100

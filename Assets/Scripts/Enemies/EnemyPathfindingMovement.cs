@@ -14,8 +14,7 @@ public class EnemyPathfindingMovement : MonoBehaviour
 
     void Start()
     {
-        if (waypoints == null)
-            waypoints = FindFirstObjectByType<WaypointPath>();
+        waypoints = WaypointPath.Instance;
 
         startPoint = waypoints.GetWaypoint(1);
         endPoint = waypoints.GetWaypoint(waypoints.GetWaypointCount()-2);

@@ -2,11 +2,14 @@ using UnityEngine;
 
 public class WaypointPath : MonoBehaviour
 {
+    public static WaypointPath Instance;
+
     public Transform[] waypoints;
 
     void Awake()
     {
-        // Obtener todos los hijos automáticamente
+        Instance = this;
+
         waypoints = new Transform[transform.childCount];
         for (int i = 0; i < waypoints.Length; i++)
         {

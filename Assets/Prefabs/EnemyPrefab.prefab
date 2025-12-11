@@ -223,6 +223,7 @@ MonoBehaviour:
   goldReward: 10
   scoreReward: 20
   lifePenalty: 1
+  isboos: 0
 --- !u!1 &4523708068878074821
 GameObject:
   m_ObjectHideFlags: 0

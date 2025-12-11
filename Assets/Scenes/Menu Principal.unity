@@ -290,7 +290,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 860bc35dd03a25d4dab4534f5ee6b920, type: 3}
+  m_Texture: {fileID: 2800000, guid: 42941c217ce251a469fe5704d492b05c, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1212,8 +1212,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287616648
-  m_fontColor: {r: 0.53466535, g: 0.8396226, b: 0.56262755, a: 1}
+    rgba: 4285390946
+  m_fontColor: {r: 0.38487893, g: 0.8773585, b: 0.42907584, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1496,6 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 853640814}
+  - component: {fileID: 853640815}
   m_Layer: 0
   m_Name: MenuPrincipal
   m_TagString: Untagged
@@ -1522,6 +1523,28 @@ Transform:
   - {fileID: 582317037}
   m_Father: {fileID: 1100147859}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &853640815
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853640813}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7ede4448ad620446b8cee1612192850, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &856111842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,8 +1617,8 @@ Camera:
   m_GameObject: {fileID: 877332202}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1820,7 +1843,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2302,6 +2325,8 @@ GameObject:
   - component: {fileID: 1100147856}
   - component: {fileID: 1100147860}
   - component: {fileID: 1100147861}
+  - component: {fileID: 1100147862}
+  - component: {fileID: 1100147863}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2410,6 +2435,7 @@ MonoBehaviour:
   optionsMenu: {fileID: 881352453}
   mainMenu: {fileID: 853640813}
   selectionLevel: {fileID: 142192922}
+  animacionFinal: {fileID: 7400000, guid: cfb8cdc3aa0e8ac40a487276a5ec8086, type: 2}
 --- !u!114 &1100147861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,6 +2450,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MusicController
   mixer: {fileID: 24100000, guid: b3f15fb8c9fecbb4f8d615693c7e3ddb, type: 2}
   musicSlider: {fileID: 359044223}
+--- !u!225 &1100147862
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100147855}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!95 &1100147863
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100147855}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 678e56eb3f9a149459b6208d924621fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1247955531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2780,7 +2840,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3336,7 +3396,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3519,6 +3579,7 @@ GameObject:
   - component: {fileID: 1687729238}
   - component: {fileID: 1687729240}
   - component: {fileID: 1687729239}
+  - component: {fileID: 1687729241}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -3558,7 +3619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.9490196}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3580,6 +3641,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687729237}
   m_CullTransparentMesh: 1
+--- !u!95 &1687729241
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687729237}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69c376daeb34271408adbde24fa4c4f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1702399332
 GameObject:
   m_ObjectHideFlags: 0

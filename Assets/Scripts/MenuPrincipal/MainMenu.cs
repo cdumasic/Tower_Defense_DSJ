@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,13 @@ public class MainMenu : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject mainMenu;
     public GameObject selectionLevel;
+    private Animator animator;
+    [SerializeField] private AnimationClip animacionFinal;
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void OpenOptionsPanel()
     {
@@ -37,7 +45,17 @@ public class MainMenu : MonoBehaviour
 
     public void Starlevel(int level)
     {
-        SceneManager.LoadScene(level);
+        PlayerPrefs.SetInt("LevelCurrent", level);
+        PlayerPrefs.Save();
+        StartCoroutine(CambiarEscena());
     }
+
+    IEnumerator CambiarEscena()
+    {
+        animator.SetTrigger("Iniciar");
+        yield return new WaitForSeconds(animacionFinal.length);
+        SceneManager.LoadScene(1);
+    }
+        
 
 }

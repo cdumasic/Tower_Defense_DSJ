@@ -11,19 +11,18 @@ public class TowerSlot : MonoBehaviour
     private int levelTower2 = 0;
     private int levelTower3 = 0;
     private int levelTower4 = 0;
+
     private GameObject torre;
-    private Tower towerData1;
-    private Tower towerData2;
-    private Tower towerData3;
+    private Tower towerData;
 
     private int towerSelection = 0;
 
     void Start()
     {
         
-        towerData1 = towerPrefab1[0].GetComponent<Tower>();
+        towerData = towerPrefab1[0].GetComponent<Tower>();
         
-        if (towerData1 == null || towerData2 == null || towerData3 == null)
+        if (towerData == null)
         {
             Debug.LogError("El prefab no tiene componente Tower.cs");
             return;
@@ -37,9 +36,9 @@ public class TowerSlot : MonoBehaviour
         {
             if (levelTower2 != 0 || levelTower3 != 0 || levelTower4 != 0) return;
 
-            int cost1 = towerData1.cost1;
-            int cost2 = towerData1.cost2;
-            int cost3 = towerData1.cost3;
+            int cost1 = towerData.TowerPrices1(towerSelection);
+            int cost2 = towerData.TowerPrices2(towerSelection);
+            int cost3 = towerData.TowerPrices3(towerSelection);
 
             // Verificar si hay suficiente oro
             if (GameManager.Instance.GetGold() >= cost1 && levelTower1 == 0)
@@ -48,7 +47,6 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost1);
                 torre = Instantiate(towerPrefab1[0], transform.position, Quaternion.identity);
                 //isOccupied = true;
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
                 levelTower1 = 1;
             }
             else if (GameManager.Instance.GetGold() >= cost2 && levelTower1 == 1)
@@ -57,7 +55,6 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost2);
                 Destroy(torre);
                 torre = Instantiate(towerPrefab1[1], transform.position, Quaternion.identity);
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
                 levelTower1 = 2;
             }
 
@@ -67,21 +64,20 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost3);
                 Destroy(torre);
                 torre = Instantiate(towerPrefab1[2], transform.position, Quaternion.identity);
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
             }
 
             else
             {
-                Debug.Log("No hay suficiente oro para colocar esta torre.");
+                GameManager.Instance.setMessage("No hay suficiente oro para colocar esta torre");
             }
 
         }
         else if (towerSelection == 1)
         {
             if (levelTower1 != 0 || levelTower3 != 0 || levelTower4 != 0) return;
-            int cost1 = towerData1.cost1;
-            int cost2 = towerData1.cost2;
-            int cost3 = towerData1.cost3;
+            int cost1 = towerData.TowerPrices1(towerSelection);
+            int cost2 = towerData.TowerPrices2(towerSelection);
+            int cost3 = towerData.TowerPrices3(towerSelection);
 
             // Verificar si hay suficiente oro
             if (GameManager.Instance.GetGold() >= cost1 && levelTower2 == 0)
@@ -90,7 +86,6 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost1);
                 torre = Instantiate(towerPrefab2[0], transform.position, Quaternion.identity);
                 //isOccupied = true;
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
                 levelTower2 = 1;
             }
             else if (GameManager.Instance.GetGold() >= cost2 && levelTower2 == 1)
@@ -99,7 +94,6 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost2);
                 Destroy(torre);
                 torre = Instantiate(towerPrefab2[1], transform.position, Quaternion.identity);
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
                 levelTower2 = 2;
             }
 
@@ -109,21 +103,20 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost3);
                 Destroy(torre);
                 torre = Instantiate(towerPrefab2[2], transform.position, Quaternion.identity);
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
             }
 
             else
             {
-                Debug.Log("No hay suficiente oro para colocar esta torre.");
+                GameManager.Instance.setMessage("No hay suficiente oro para colocar esta torre.");
             }
         }
         else if (towerSelection == 2)
         {
             if (levelTower1 != 0 || levelTower2 != 0 || levelTower4 != 0) return;
 
-            int cost1 = towerData1.cost1;
-            int cost2 = towerData1.cost2;
-            int cost3 = towerData1.cost3;
+            int cost1 = towerData.TowerPrices1(towerSelection);
+            int cost2 = towerData.TowerPrices2(towerSelection);
+            int cost3 = towerData.TowerPrices3(towerSelection);
 
             // Verificar si hay suficiente oro
             if (GameManager.Instance.GetGold() >= cost1 && levelTower3 == 0)
@@ -132,7 +125,6 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost1);
                 torre = Instantiate(towerPrefab3[0], transform.position, Quaternion.identity);
                 //isOccupied = true;
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
                 levelTower3 = 1;
             }
             else if (GameManager.Instance.GetGold() >= cost2 && levelTower3 == 1)
@@ -141,7 +133,6 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost2);
                 Destroy(torre);
                 torre = Instantiate(towerPrefab3[1], transform.position, Quaternion.identity);
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
                 levelTower3 = 2;
             }
 
@@ -151,21 +142,20 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost3);
                 Destroy(torre);
                 torre = Instantiate(towerPrefab3[2], transform.position, Quaternion.identity);
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
             }
 
             else
             {
-                Debug.Log("No hay suficiente oro para colocar esta torre.");
+                GameManager.Instance.setMessage("No hay suficiente oro para colocar esta torre.");
             }
         }
         else if (towerSelection == 3)
         {
             if (levelTower1 != 0 || levelTower3 != 0 || levelTower3 != 0) return;
 
-            int cost1 = towerData1.cost1;
-            int cost2 = towerData1.cost2;
-            int cost3 = towerData1.cost3;
+            int cost1 = towerData.TowerPrices1(towerSelection);
+            int cost2 = towerData.TowerPrices2(towerSelection);
+            int cost3 = towerData.TowerPrices3(towerSelection);
 
             // Verificar si hay suficiente oro
             if (GameManager.Instance.GetGold() >= cost1 && levelTower4 == 0)
@@ -174,7 +164,6 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost1);
                 torre = Instantiate(towerPrefab4[0], transform.position, Quaternion.identity);
                 //isOccupied = true;
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
                 levelTower4 = 1;
             }
             else if (GameManager.Instance.GetGold() >= cost2 && levelTower4 == 1)
@@ -183,7 +172,6 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost2);
                 Destroy(torre);
                 torre = Instantiate(towerPrefab4[1], transform.position, Quaternion.identity);
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
                 levelTower4 = 2;
             }
 
@@ -193,17 +181,16 @@ public class TowerSlot : MonoBehaviour
                 GameManager.Instance.SpendGold(cost3);
                 Destroy(torre);
                 torre = Instantiate(towerPrefab4[2], transform.position, Quaternion.identity);
-                Debug.Log($"Torre colocada. Oro restante: {GameManager.Instance.GetGold()}");
             }
 
             else
             {
-                Debug.Log("No hay suficiente oro para colocar esta torre.");
+                GameManager.Instance.setMessage("No hay suficiente oro para colocar esta torre.");
             }
         }
         else
         {
-            Debug.Log("No existe esa torre.");
+            GameManager.Instance.setMessage("No existe esa torre.");
         }
     }
 }

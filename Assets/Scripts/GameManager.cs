@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro; // Si usas TextMeshPro
 
 public class GameManager : MonoBehaviour
@@ -21,7 +24,15 @@ public class GameManager : MonoBehaviour
     [Header("Referencias precios de torres")]
     public int[] torresPrices;
 
+    [Header("Referencias de mensajes de pantalla")]
+    public TMP_Text ordaText;
+    public TMP_Text messageAlert;
+
+
     private int torreSeleccionada = 0;
+    private int numOrda = 0;
+    private string message;
+    private int LevelCurrent;
 
     void Awake()
     {
@@ -36,6 +47,9 @@ public class GameManager : MonoBehaviour
     {
         UpdateUI();
         torres[0] = true;
+        LevelCurrent = PlayerPrefs.GetInt("LevelCurrent", 0);
+        Debug.Log("ESTE ES EL NIVEEEEEEL" +  LevelCurrent);
+
     }
     public bool getTower(int i)
     {
@@ -99,15 +113,56 @@ public class GameManager : MonoBehaviour
 
         if (lives <= 0)
         {
-            GameOver();
+            StartCoroutine(GameOver()); 
         }
     }
 
-    void GameOver()
+    public void setMessage(string message)
     {
-        Debug.Log("GAME OVER 🟥");
-        // Aquí podrías pausar el juego o mostrar un menú
-        Time.timeScale = 0;
+        this.message = message;
+        UpdateUI();
+    }
+
+    public string getMessage()
+    {
+        return message;
+    }
+
+    public void setOrda(int orda)
+    {
+        this.numOrda = orda;
+    }
+
+    public int getOrda()
+    {
+        return numOrda;
+    }
+
+    public void Win()
+    {
+        StartCoroutine(GameWin());
+    }
+
+    IEnumerator GameOver()
+    {
+        this.message = "GAME OVER";
+        UpdateUI();
+        yield return new WaitForSeconds(5f);
+        this.message = "Volviendo al menú de inicio";
+        UpdateUI();
+        SceneManager.LoadScene(0);
+    }
+
+    IEnumerator GameWin()
+    {
+        this.message = "GANASTEEE";
+        UpdateUI();
+        yield return new WaitForSeconds(5f);
+        this.message = "Llendo al siguiente nivel";
+        UpdateUI();
+        PlayerPrefs.SetInt("LevelCurrent", LevelCurrent + 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(1);
     }
 
     void UpdateUI()
@@ -115,5 +170,8 @@ public class GameManager : MonoBehaviour
         if (goldText) goldText.text = $"{gold}";
         if (livesText) livesText.text = $"{lives}";
         if (scoreText) scoreText.text = $"{score}";
+
+        if(ordaText) ordaText.text = $"{numOrda}";
+        if (messageAlert) messageAlert.text = $"{message}";
     }
 }

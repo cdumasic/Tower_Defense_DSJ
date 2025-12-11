@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     public int scoreReward = 20;
     public int lifePenalty = 1;
 
+    [Header("Jefe Final")]
+    public bool isboos = false;
+
     private EnemyMovement movement;
 
     void Start()
@@ -52,6 +55,11 @@ public class Enemy : MonoBehaviour
         {
             GameManager.Instance.AddGold(goldReward);
             GameManager.Instance.AddScore(scoreReward);
+        }
+
+        if (isboos)
+        {
+            GameManager.Instance.Win();
         }
 
         EnemyManager.enemies.Remove(this);
